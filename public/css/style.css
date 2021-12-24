@@ -16,6 +16,12 @@ body {
     height: 100%;
     opacity: 0.5;
 }
+h1 {
+    margin-top: 0;
+}
+p:last-of-type {
+    margin-bottom: 0;
+}
 
 .box {
     padding: 20px;
@@ -25,4 +31,14 @@ body {
 }
 .box:nth-child(2) {
     margin-left: 120px;
+}
+
+.box-3 {
+    background: red;
+    margin-left: 250px;
+}
+
+.box-4 {
+    background: red;
+    margin-left: 700px;
 }

@@ -18,21 +18,33 @@ function getOffset(el) {
     return { top: _y, left: _x };
 };
 
+function getPageHeight() {
+    return Math.max( document.body.scrollHeight, document.body.offsetHeight,
+        document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
+}
+
+
 ready(function() {
+
+    var body = document.body,
+        html = document.documentElement;
+
+    var pageHeight = getPageHeight();
+
+    var canvas = document.getElementById('matter-canvas');
 
     // module aliases
     var Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
         World = Matter.World,
-        Bodies = Matter.Bodies;
+        Bodies = Matter.Bodies,
+        Body = Matter.Body;
 
 
     // create an engine
     var engine = Engine.create();
     var runner = Runner.create();
-
-    var canvas = document.getElementById('matter-canvas');
 
     // create a renderer
     var render = Render.create({
@@ -47,9 +59,21 @@ ready(function() {
 
     Render.setPixelRatio(render, 'auto');
 
+    var matterElements = [];
+
+    // create boundarie elements
+    var boundaries = {
+        top:    Bodies.rectangle(0, -10, document.documentElement.clientWidth * 10, 10 * window.devicePixelRatio, {isStatic: true, frictionAir: 0.1}),
+        bottom: Bodies.rectangle(0, window.innerHeight + 10, document.documentElement.clientWidth * 10, 10 * window.devicePixelRatio, {isStatic: true, frictionAir: 0.1}),
+        left:   Bodies.rectangle(-10, 0, 10 * window.devicePixelRatio, pageHeight * window.devicePixelRatio, {isStatic: true, frictionAir: 0.1}),
+        right:  Bodies.rectangle(document.documentElement.clientWidth, 0, 10 * window.devicePixelRatio, pageHeight * window.devicePixelRatio, {isStatic: true, frictionAir: 0.1})
+    }
+    matterElements.push(boundaries.top);
+    matterElements.push(boundaries.bottom);
+    matterElements.push(boundaries.left);
+    matterElements.push(boundaries.right);
 
     // get positions of dom elements, create matter elements
-    var matterElements = [];
     var DOMElements = document.querySelectorAll('.matter');
     var options, offset;
     DOMElements.forEach(function(el, currentIndex) {
@@ -71,29 +95,32 @@ ready(function() {
         matterElements.push(matterElement);
     });
 
-    console.log(matterElements);
 
+    // update matter elements -> dom elements
     function step() {
-
         matterElements.forEach(function(el) {
             if (typeof el.element !== 'undefined') {
                 el.element.style.transform = 'translate(' + (el.position.x - el.positionOrig.x) + 'px, ' + (el.position.y - el.positionOrig.y) + 'px) rotate(' + el.angle + 'rad )';
             }
         });
-
         window.requestAnimationFrame(step);
     }
     window.requestAnimationFrame(step);
 
-    /*
-    // create two boxes and a ground
-    var boxA = Bodies.rectangle(400, 200, 80, 80, {
-        frictionAir: 0.1,
-        isStatic: true
-    });
-    var boxB = Bodies.rectangle(450, 50, 80, 80);
-    var ground = Bodies.rectangle(400, 610, 210, 60, { isStatic: true });
-    */
+    // on scroll or resize: move bottom
+    function moveBottom() {
+        Body.setPosition(boundaries.bottom, {x: 0, y: window.innerHeight + 10 + window.scrollY});
+    }
+    function onScroll() {
+        moveBottom();
+    }
+    function onResize() {
+        moveBottom();
+    }
+    document.addEventListener('scroll', onScroll);
+    window.onresize = onResize;
+
+
     // add all of the bodies to the world
     World.add(engine.world, matterElements);
 
@@ -101,11 +128,8 @@ ready(function() {
     Runner.run(runner, engine);
 
     // run the renderer
-    Render.run(render);
+    //Render.run(render);
 
-    setInterval(function() {
-        //console.log(boxB.position.y);
-    }, 200);
 
 
 });
