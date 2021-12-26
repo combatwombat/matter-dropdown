@@ -7,6 +7,7 @@ html, body {
 }
 body {
     position: relative;
+    font-family: sans-serif;
 }
 #matter-canvas {
     position: absolute;
@@ -21,6 +22,17 @@ h1 {
 }
 p:last-of-type {
     margin-bottom: 0;
+}
+
+img {
+    display: block;
+    margin-left: 10px;
+    width: 400px;
+}
+
+.has-shadow {
+    box-shadow: rgba(0,0,0,0.3) 0 10px 20px;
+    border-radius: 10px;
 }
 
 .box {
