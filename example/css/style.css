@@ -1,0 +1,99 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+h1 {
+    margin-top: 0;
+}
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+@keyframes backandforth {
+    0% {
+        transform: translateX(-200px);
+    }
+    50% {
+        transform: translateX(100px) rotate(180deg);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
+img {
+    display: block;
+    margin-left: 10px;
+    width: 400px;
+}
+
+.has-shadow {
+    box-shadow: rgba(0,0,0,0.5) 0 10px 20px;
+}
+
+.box {
+    padding: 20px;
+    background: blue;
+    color: white;
+    width: 200px;
+}
+
+.box-1 {
+    margin-top: 50px;
+    transform: translate(400px, 50px) rotate(10deg);
+    animation: 5s backandforth ease-in-out infinite;
+    border-radius: 10px;
+}
+
+.box-2 {
+    margin-left: 120px;
+}
+
+.box-3 {
+    background: red;
+    margin-left: 250px;
+}
+
+.box-4 {
+    background: red;
+    margin-left: 700px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu > li {
+    display: inline-block;
+    position: relative;
+}
+.menu > li > a {
+    display: block;
+    padding: 10px;
+}
+.menu > li ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: green;
+    color: #fff;
+    width: 200px;
+    border-radius: 10px;
+}
+.menu > li ul a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+}
+.menu > li ul.visible {
+    position: absolute;
+    display: block;
+}
