@@ -1,7 +1,7 @@
 /*
     MatterDropdown 0.1
 
-    Applies physics to DOM elements and lets you bounce them around with he mouse.
+    Applies physics to DOM elements and lets you bounce them around with the mouse.
 
     Robert Gerlach 2021 - gerlach.dev
  */
