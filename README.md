@@ -75,6 +75,6 @@ But:
        })
    })
    ```
-6. A `border-radius` gets recognized automatically. Give the element the class `has-boxshadow` if it has one. Can only be `rgba(0,0,0,0.5) 0 10px 20px;` (or change it in `matter-dropdown.js`)
+6. A `border-radius` gets recognized automatically. Give the element the class `has-boxshadow` if it has one. Can only be `rgba(0,0,0,0.2) 0 10px 20px;` (or change it in `matter-dropdown.js`)
 7. An existing element with class `matter` is added to the physics objects immediately after init(). Give it the attribute `data-matter-init-delay="1000"` to delay that init by 1000ms.
    

@@ -155,7 +155,7 @@ function MatterDropdown(customOptions = {}) {
                 // rotate shadow
                 if (el.hasShadow) {
                     var shadowAngle = 0.5 * Math.PI - el.angle;
-                    el.element.style.boxShadow = 'rgba(0,0,0,0.5) ' + (Math.cos(shadowAngle) * 10) + 'px ' + (Math.sin(shadowAngle) * 10) + 'px 20px';
+                    el.element.style.boxShadow = 'rgba(0,0,0,0.2) ' + (Math.cos(shadowAngle) * 10) + 'px ' + (Math.sin(shadowAngle) * 10) + 'px 20px';
                 }
 
             }
