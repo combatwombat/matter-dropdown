@@ -119,7 +119,7 @@ function MatterDropdown(customOptions = {}) {
 
         // move dom elements like their physics counterparts
         matterElements.forEach(function (el) {
-            if (typeof el.element !== 'undefined' && !el.isSleeping) {
+            if (typeof el.element !== 'undefined') {
 
                 // static object? apply dom- to physics position
                 if (el.isStatic) {
