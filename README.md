@@ -3,7 +3,7 @@
 Applies physics to DOM elements and lets you bounce them around with the mouse. Built with [matter.js](https://github.com/liabru/matter-js/) and [ismailman/decompose-dommatrix](https://github.com/ismailman/decompose-dommatrix).
 
 Example: [dropdown.robsite.net](https://dropdown.robsite.net)  
-Simple Example with debug mode: [dropdown.robsite.net/simple-example](https://dropdown.robsite.net/simple-example)
+Simple Example: [dropdown.robsite.net/simple-example](https://dropdown.robsite.net/simple-example)
 
 ## Usage
 

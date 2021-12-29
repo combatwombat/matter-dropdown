@@ -210,15 +210,10 @@ function MatterDropdown(customOptions = {}) {
         // get positions of dom elements, create matter elements
         document.querySelectorAll('.matter').forEach(function(el) {
             var initDelay = el.getAttribute('data-matter-init-delay');
-            if (initDelay) {
-                setTimeout(function() {
-                    var matterElement = createBodyFromDOMElement(el);
-                    World.add(engine.world, matterElement);
-                    matterElements.push(matterElement);
-                }, initDelay);
-            } else {
-                matterElements.push(createBodyFromDOMElement(el));
-            }
+            initDelay = initDelay ? initDelay : 0;
+            setTimeout(function() {
+                addElement(el);
+            }, initDelay);
         });
 
 
