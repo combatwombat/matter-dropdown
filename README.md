@@ -9,7 +9,7 @@ Simple Example: [dropdown.robsite.net/simple-example](https://dropdown.robsite.n
 
 ## Usage
 
-Don't. This is just for inspiration and not meant for people to use, yet. It doesn't really work with responsive websites or touch controls. Try [elopezga/matter-dom-plugin](https://github.com/elopezga/matter-dom-plugin) for a somewhat similar thing with more features and support.
+Don't. This is just for fun and not meant for people to use, yet. It doesn't really work with changing browser widths or touch controls. Try [elopezga/matter-dom-plugin](https://github.com/elopezga/matter-dom-plugin) for a somewhat similar thing with more features and support.
 
 But:
 
@@ -78,5 +78,5 @@ But:
    })
    ```
 6. A `border-radius` gets recognized automatically. Give the element the class `has-boxshadow` if it has one. Can only be `rgba(0,0,0,0.2) 0 10px 20px;` (or change it in `matter-dropdown.js`)
-7. An existing element with class `matter` is added to the physics objects immediately after init(). Give it the attribute `data-matter-init-delay="1000"` to delay that init by 1000ms.
+7. An existing element with class `matter` is added to the physics objects immediately after init(). Give it the attribute `data-matter-init-delay="1000"` to delay this by 1000ms.
    
