@@ -51,10 +51,10 @@ function MatterDropdown(customOptions = {}) {
 
     var getPageHeight = function() {
         return Math.max(document.body.scrollHeight,
-                        document.body.offsetHeight,
-                        document.documentElement.clientHeight,
-                        document.documentElement.scrollHeight,
-                        document.documentElement.offsetHeight);
+            document.body.offsetHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight);
     }
 
     var createBodyFromDOMElement = function(el) {
@@ -209,11 +209,9 @@ function MatterDropdown(customOptions = {}) {
 
         // get positions of dom elements, create matter elements
         document.querySelectorAll('.matter').forEach(function(el) {
-            var initDelay = el.getAttribute('data-matter-init-delay');
-            initDelay = initDelay ? initDelay : 0;
             setTimeout(function() {
                 addElement(el);
-            }, initDelay);
+            }, el.getAttribute('data-matter-init-delay') || 0);
         });
 
 
