@@ -114,7 +114,7 @@ function MatterDropdown(customOptions = {}) {
 
         // do this instead of Matter.Mouse, so we can hide the canvas and keep natural site scrolling
         if (interactionStartTime !== null && now - interactionStartTime > options.timeToInteraction) {
-            Body.setPosition(mouseBall, {x: mousePosition.x, y: mousePosition.y});
+            Body.setPosition(mouseBall, mousePosition);
         }
 
         // move dom elements like their physics counterparts
