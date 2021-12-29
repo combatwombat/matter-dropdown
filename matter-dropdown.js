@@ -1,7 +1,9 @@
 /*
     MatterDropdown 0.1
-    Robert Gerlach 2021 - gerlach.dev
+
     Applies physics to DOM elements and lets you bounce them around with he mouse.
+
+    Robert Gerlach 2021 - gerlach.dev
  */
 function MatterDropdown(customOptions = {}) {
 
