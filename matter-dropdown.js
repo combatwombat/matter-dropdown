@@ -186,7 +186,7 @@ function MatterDropdown(customOptions = {}) {
 
         matterElements = [];
 
-        // create boundarie elements
+        // create boundary elements
         var boundaryOptions = {
             isStatic: true,
             restitution: 0.5,
