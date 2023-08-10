@@ -5,7 +5,7 @@ Applies physics to DOM elements and lets you bounce them around with the mouse. 
 Example: [dropdown.robsite.net](https://dropdown.robsite.net) (open a menu)  
 Simple Example: [dropdown.robsite.net/simple-example](https://dropdown.robsite.net/simple-example)
 
-<video autoplay style="width: 100%" src="[https://user-images.githubusercontent.com/26400/147693211-8284641c-fff1-402a-a97b-a5f3221da234.mp4](https://robertgerlach.net/github/matter-dropdown.mp4)"></video>
+https://user-images.githubusercontent.com/26400/147693211-8284641c-fff1-402a-a97b-a5f3221da234.mp4
 
 ## Usage
 
